@@ -18,4 +18,6 @@ contract OptimizedArraySum {
         return sum;
     }
 }
-// 23399
+// Gas target
+//        Current gas use:   23399
+//        The gas target is: 23396
