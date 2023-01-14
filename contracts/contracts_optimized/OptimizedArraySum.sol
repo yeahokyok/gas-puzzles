@@ -10,6 +10,8 @@ contract OptimizedArraySum {
     }
 
     function getArraySum() external view returns (uint256 sum) {
+        // Remove uint256 sum and return
+        // Storing the array length in memory costs more gas than directly accessing array.length
         for (uint256 i = 0; i < array.length; i++) {
             sum += array[i];
         }
