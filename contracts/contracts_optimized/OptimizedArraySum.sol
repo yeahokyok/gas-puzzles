@@ -10,14 +10,11 @@ contract OptimizedArraySum {
     }
 
     function getArraySum() external view returns (uint256 sum) {
-        uint256 _length = array.length;
-        for (uint256 i = 0; i < _length; i++) {
+        for (uint256 i = 0; i < array.length; i++) {
             sum += array[i];
         }
-
-        return sum;
     }
 }
 // Gas target
-//        Current gas use:   23399
-//        The gas target is: 23396
+//    Current gas use:   23391
+//    The gas target is: 23396
