@@ -1,43 +1,18 @@
 # [RareSkills](https://rareskills.io) Gas Puzzles
 
-If you want to learn about gas optimization, take the [Udemy gas optimization course](https://www.udemy.com/course/advanced-solidity-understanding-and-optimizing-gas-costs/?referralCode=C4684D6872713525E349)!
+A sequence of smart contracts to practice gas optimization. These are used as practice assignments for RareSkills.io and the Udemy Gas Optimization Course
 
-## Puzzles that are ready for you
-- [x] Distribute (hard)
-- [x] Array Sum (easy)
-- [x] Mint150 (hard)
-- [x] ERC165 (low level programming required)
-- [ ] Escrow
-- [ ] EscrowV2
-- [ ] Mint
-- [ ] Presale
-- [x] Vote (easy)
-- [x] Require (easy)
-- [ ] Staking
+## Optimized Puzzles
 
-## Contributors
+-   Optimized [Vote](https://github.com/yeahokyok/gas-puzzles/blob/main/contracts/contracts_optimized/OptimizedVote.sol) 138807 to 136499 in gas usage.
 
-DO NOT COMMIT SOLUTIONS, BE SURE TO PUT ANSWERS IN `contracts/contracts_optimized` to ensure they fall into the `.gitignore`
+-   Optimized [ArraySum](https://github.com/yeahokyok/gas-puzzles/blob/main/contracts/contracts_optimized/OptimizedArraySum.sol) 23399 to 23396 in gas usage.
 
-## Players
+-   Optimized [Require](https://github.com/yeahokyok/gas-puzzles/blob/main/contracts/contracts_optimized/OptimizedRequire.sol) 43392 to 26284 in gas usage.
 
-Your goal is to optimize the contracts such that they reach the target efficiency.
+-   Optimized [Distribute](https://github.com/yeahokyok/gas-puzzles/blob/main/contracts/contracts_optimized/OptimizedDistribute.sol) 71953 to 57022 in gas usage.
 
-Rules
-
--   you may not change the optimizer level
--   you may not change the solidity version
--   you may refactor functionality as long as you don't break the business logic
--   you may make reasonable assumptions about what variable sizes are necessary to get things done
--   you may remove unnecessary or redunant logic (some have been intentionally added)
--   because making functions `payable` is a controversial optimization, you do not need to make functions `payable` to reach the gas target unless the function needs to be payable to fulfill its business logic
-
-## Testing
-
-As mentioned above, optimized contracts should be created in their own sub-folder
-to prevent commiting them publicly.
-
-The file structure should look similar to this:
+## file structure
 
 ```
 - GasPuzzles
@@ -46,8 +21,8 @@ The file structure should look similar to this:
     |_
       contracts_optimized
     | |_
-    |   ArraySum.sol
-    |   Distribute.sol
+    |   OptimizedArraySum.sol
+    |   OptimizedDistribute.sol
     |   ..
     |   ...
     |
@@ -57,21 +32,9 @@ The file structure should look similar to this:
     ...
 ```
 
-Within the contracts that are optimized be sure to follow the following naming
-convention to ensure tests run smoothly:
+## Testing
 
 ```
-contract OptimizedArraySum {
-
-...
-
-contract OptimizedDistribute {
-
-...
-```
-
-```
-npx hardhat test
-npx hardhat test test/ArraySum
-npx prettier --write *
+yarn hardhat test
+yarn hardhat test test/Vote
 ```
