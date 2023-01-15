@@ -4,9 +4,12 @@ pragma solidity 0.8.15;
 contract OptimizedRequire {
     uint256 constant COOLDOWN = 1 minutes;
 
-    // Setting a value from zero to a non-zero value cost 20k gas,
+    // (Gsset) Setting a value from zero to a non-zero value cost 20k gas,
     // so set the value to 1 to make it a non-zero value.
-    // non-zero to non-zero costs 5000(cold) or 2900(warm)
+    // non-zero to non-zero costs 5000(cold: Gcoldsload 2100 + Gsreset 2900)
+    // (Gcoldsload) cold storage access cost 2100 gas
+    // in this case `lastPurchaseTime` has already been accessed in the `require`
+    // so it cost 2900 gas to set non-zero to non-zero
     uint256 lastPurchaseTime = 1;
 
     function purchaseToken() external payable {
