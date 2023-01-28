@@ -1,6 +1,6 @@
-# [RareSkills](https://rareskills.io) Gas Puzzles
+# My gas optimized for [RareSkills](https://rareskills.io) Gas Puzzles
 
-A sequence of smart contracts to practice gas optimization. These are used as practice assignments for RareSkills.io and the Udemy Gas Optimization Course
+Practice assignments for RareSkills.io and the Udemy Gas Optimization Course
 
 ## Optimized Puzzles
 
